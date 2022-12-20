@@ -1,0 +1,14 @@
+13
+40D:\Coding\coordfromPDF\package-lock.json133160259328855541 0
+32D:\Coding\coordfromPDF\style.css133157635284051470 0
+35D:\Coding\coordfromPDF\package.json133160259328885469 0
+29D:\Coding\coordfromPDF\app.js133160257067073449 0
+27D:\Coding\coordfromPDF\dist133160448116456540 1
+63D:\Coding\coordfromPDF\node_modules\lightningcss-win32-x64-msvc133160298680195114 1
+40D:\Coding\coordfromPDF\helloWorldLoc.pdf133158399179425630 0
+33D:\Coding\coordfromPDF\index.html133160280486819414 0
+35D:\Coding\coordfromPDF\node_modules133160298915167814 1
+96D:\Coding\coordfromPDF\node_modules\lightningcss-win32-x64-msvc\lightningcss.win32-x64-msvc.node133160259297509475 0
+45D:\Coding\coordfromPDF\dist\index.5baa4167.js133160448115847543 0
+49D:\Coding\coordfromPDF\dist\index.5baa4167.js.map133160448116058982 0
+38D:\Coding\coordfromPDF\dist\index.html133160448116456540 0

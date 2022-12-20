@@ -1,6 +1,7 @@
+
 // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
-var url = '../helloWorldLoc.PDF';
+var url = '../helloWorldLoc.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -8,10 +9,13 @@ var pdfjsLib = window['pdfjs-dist/build/pdf'];
 // The workerSrc property shall be specified.
 pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
-const PAGE_NUMBER = 2;
+const PAGE_NUMBER = 1; // it should not be hard coded!
 const PAGE_SCALE = 1.5;
 const SVG_NS = "http://www.w3.org/2000/svg";
 
+const pageforward = function(){
+  
+}
 
 function buildSVG(viewport, textContent) {
     // Building SVG with size of the viewport (for simplicity)
@@ -48,10 +52,10 @@ function buildSVG(viewport, textContent) {
     const viewport = page.getViewport({ scale: PAGE_SCALE });
     const textContent = await page.getTextContent();
 
-    console.log(textContent.items.forEach(el=>{
+    textContent.items.forEach(el=>{
         if(el.str.includes('°') )
         {console.log(el.str);}
-    }));
+    });
     // building SVG and adding that to the DOM
     const svg = buildSVG(viewport, textContent);
     document.getElementById("pageContainer").append(svg);
