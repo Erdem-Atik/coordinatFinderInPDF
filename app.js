@@ -1,6 +1,6 @@
-var utmObj = require('utm-latlng');
+const utmObj = require('utm-latlng');
 const { multiply,add } = require('mathjs')
-var utm=new utmObj(); //Default Ellipsoid is 'WGS 84'
+const utm=new utmObj(); //Default Ellipsoid is 'WGS 84'
 // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
 const res = utm.convertLatLngToUtm( 41.016718, 28.985154, 100);
@@ -40,10 +40,10 @@ wgsToEd(4000,7000)
 
 
 
-var url = '../helloWorldLoc.pdf';
+const url = '../helloWorldLoc.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 // The workerSrc property shall be specified.
 pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
