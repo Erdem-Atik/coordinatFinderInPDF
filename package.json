@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/Erdem-Atik/coordinatFinderInPDF/issues"
   },
-  "homepage": "https://github.com/Erdem-Atik/coordinatFinderInPDF#readme",
-  "dependencies": {
-    "mathjs": "^11.5.0",
-    "utm-latlng": "^1.0.7"
-  }
+  "homepage": "https://github.com/Erdem-Atik/coordinatFinderInPDF#readme"
 }
