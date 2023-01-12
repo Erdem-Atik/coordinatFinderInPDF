@@ -43,7 +43,7 @@ wgsToEd(4000,7000)
 
 
 
-const url = '../helloWorldLoc.pdf';
+const url = './helloWorldLoc.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 const pdfjsLib = window['pdfjs-dist/build/pdf'];
