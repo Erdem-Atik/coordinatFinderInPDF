@@ -1,0 +1,22 @@
+{
+  "name": "coordfrompdf",
+  "version": "1.0.0",
+  "description": "Hello All,\r This codes can find a geo coordinate in the PDF document. The coordinates should be 'Lat. Long' format. So it is like 41° 1'0.18\"N 28°59'6.55\"E!\r The PDF.js(powered by Mozilla Foundation) is used in this project. I hope I will improve this project in the near future :)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erdem-Atik/coordinatFinderInPDF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erdem-Atik/coordinatFinderInPDF/issues"
+  },
+  "homepage": "https://github.com/Erdem-Atik/coordinatFinderInPDF#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
