@@ -591,7 +591,6 @@ async function pageLoaded() {
     const geoInPDF = textContent.items.filter((el)=>{
         return el.str.includes("\xb0");
     });
-    console.log(geoInPDF);
     // building SVG and adding that to the DOM
     const svg = buildSVG(viewport, textContent);
     document.getElementById("pageContainer").append(svg);
