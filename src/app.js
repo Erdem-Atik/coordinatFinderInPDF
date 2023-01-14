@@ -61,15 +61,18 @@ function buildSVG(viewport, textContent) {
     const viewport = page.getViewport({ scale: PAGE_SCALE });
     const textContent = await page.getTextContent();
 
+   const geoInPDF= textContent.items.filter(el=>{
+    return el.str.includes('°')
+    })
+    console.log(geoInPDF);
+    let geoCoordInPDF = [];
     textContent.items.forEach(el=>{
+      if(el.str.includes('°')){
+        geoCoordInPDF.push(el.str)
+      }
+    })
+    console.log(parseLatLong(geoCoordInPDF.join(' ')));
 
-      if(el.str.includes('°') )
-      {console.log(el.str);}
-      });
-
-    const geoInPDF = textContent.items.filter(el=>{
-      return el.str.includes('°')
-    }) 
 
     // building SVG and adding that to the DOM
     const svg = buildSVG(viewport, textContent);

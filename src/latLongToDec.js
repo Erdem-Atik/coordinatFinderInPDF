@@ -21,5 +21,5 @@ export function parseLatLong(input) {
     if((geoLetters[1].toUpperCase()==='W')||(geoLetters[1].toUpperCase()==='B')) longDec= -longDec // B is abr. of batı (it means west in Turkish)
     
     
-    return [latDec,longDec]
+    return [latDec,geoLetters[0],longDec,geoLetters[1]]
     }

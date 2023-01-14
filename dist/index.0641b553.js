@@ -585,12 +585,15 @@ async function pageLoaded() {
         scale: PAGE_SCALE
     });
     const textContent = await page.getTextContent();
-    textContent.items.forEach((el)=>{
-        if (el.str.includes("\xb0")) console.log(el.str);
-    });
     const geoInPDF = textContent.items.filter((el)=>{
         return el.str.includes("\xb0");
     });
+    console.log(geoInPDF);
+    let geoCoordInPDF = [];
+    textContent.items.forEach((el)=>{
+        if (el.str.includes("\xb0")) geoCoordInPDF.push(el.str);
+    });
+    console.log((0, _latLongToDecJs.parseLatLong)(geoCoordInPDF.join(" ")));
     // building SVG and adding that to the DOM
     const svg = buildSVG(viewport, textContent);
     document.getElementById("pageContainer").append(svg);
@@ -670,7 +673,9 @@ function parseLatLong(input) {
     ;
     return [
         latDec,
-        longDec
+        geoLetters[0],
+        longDec,
+        geoLetters[1]
     ];
 }
 
