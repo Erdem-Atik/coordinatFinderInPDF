@@ -1,14 +1,16 @@
 import {parseLatLong} from './latLongToDec.js';
 
 
+const input = document.getElementById('pdf-file')
+const uploadButton = document.getElementById('upload-button')
+
 const url = new URL('../helloWorldLoc.pdf', import.meta.url);
 
 const grid = document.querySelector(".grid");
 
 let img = document.createElement('iframe');
-img.src = new URL('../helloWorldLoc.pdf', import.meta.url);
-document.body.appendChild(img);
-
+//img.src = new URL('../helloWorldLoc.pdf', import.meta.url);
+//document.body.appendChild(img);
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 const pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -20,11 +22,6 @@ const PAGE_NUMBER = 1; // it should not be hard coded!
 const PAGE_SCALE = 1.5;
 const SVG_NS = "http://www.w3.org/2000/svg";
 
-const pageforward = function(){
-
-}
-
-pageforward()
 
 function buildSVG(viewport, textContent) {
     // Building SVG with size of the viewport (for simplicity)
@@ -61,18 +58,14 @@ function buildSVG(viewport, textContent) {
     const viewport = page.getViewport({ scale: PAGE_SCALE });
     const textContent = await page.getTextContent();
 
-   const geoInPDF= textContent.items.filter(el=>{
-    return el.str.includes('°')
-    })
-    console.log(geoInPDF);
+
     let geoCoordInPDF = [];
     textContent.items.forEach(el=>{
-      if(el.str.includes('°')){
+      if(el.str.includes('°')&&el.str.includes(`'`)){
         geoCoordInPDF.push(el.str)
       }
     })
     console.log(parseLatLong(geoCoordInPDF.join(' ')));
-
 
     // building SVG and adding that to the DOM
     const svg = buildSVG(viewport, textContent);

@@ -1,1 +1,1 @@
-{"mappings":"","sources":["src/style.css"],"sourcesContent":[null],"names":[],"version":3,"file":"index.2cdaf7bc.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAAA","sources":["src/style.css"],"sourcesContent":["form{\r\n    margin-top:  10rem;\r\n    margin-left: 7rem;\r\n}"],"names":[],"version":3,"file":"index.2cdaf7bc.css.map","sourceRoot":"/__parcel_source_root/"}

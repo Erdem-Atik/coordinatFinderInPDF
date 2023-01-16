@@ -533,11 +533,13 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bNKaB":[function(require,module,exports) {
 var _latLongToDecJs = require("./latLongToDec.js");
+const input = document.getElementById("pdf-file");
+const uploadButton = document.getElementById("upload-button");
 const url = new URL(require("1fba2cc2482e504c"));
 const grid = document.querySelector(".grid");
 let img = document.createElement("iframe");
-img.src = new URL(require("1fba2cc2482e504c"));
-document.body.appendChild(img);
+//img.src = new URL('../helloWorldLoc.pdf', import.meta.url);
+//document.body.appendChild(img);
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 const pdfjsLib = window["pdfjs-dist/build/pdf"];
 // The workerSrc property shall be specified.
@@ -545,8 +547,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "//mozilla.github.io/pdf.js/build/pdf.w
 const PAGE_NUMBER = 1; // it should not be hard coded!
 const PAGE_SCALE = 1.5;
 const SVG_NS = "http://www.w3.org/2000/svg";
-const pageforward = function() {};
-pageforward();
 function buildSVG(viewport, textContent) {
     // Building SVG with size of the viewport (for simplicity)
     const svg = document.createElementNS(SVG_NS, "svg:svg");
@@ -585,13 +585,9 @@ async function pageLoaded() {
         scale: PAGE_SCALE
     });
     const textContent = await page.getTextContent();
-    const geoInPDF = textContent.items.filter((el)=>{
-        return el.str.includes("\xb0");
-    });
-    console.log(geoInPDF);
     let geoCoordInPDF = [];
     textContent.items.forEach((el)=>{
-        if (el.str.includes("\xb0")) geoCoordInPDF.push(el.str);
+        if (el.str.includes("\xb0") && el.str.includes(`'`)) geoCoordInPDF.push(el.str);
     });
     console.log((0, _latLongToDecJs.parseLatLong)(geoCoordInPDF.join(" ")));
     // building SVG and adding that to the DOM
